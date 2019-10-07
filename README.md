@@ -8,6 +8,8 @@ Use ldapjs to query data from  <https://www.forumsys.com/tutorials/integration-h
 
 https://github.com/ldapjs/node-ldapjs/issues/483#issuecomment-410075856
 
+推荐使用ldapts，代码更好，bug更少，自带typing
+
 ```
 npm install
 npm run demo

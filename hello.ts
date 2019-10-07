@@ -8,7 +8,7 @@ const pw = 'password';
 
 // createServer()
 // Create client and bind to AD
-export const client = createClient({
+const client = createClient({
   url: 'ldap://ldap.forumsys.com'
 });
 
@@ -17,7 +17,7 @@ client.bind(dn, pw, err => {
 });
 
 // Search users
-export const searchOptions = {
+const searchOptions = {
   filter: `(mail=*@ldap.forumsys.com)`,
   scope: 'sub',
   attributes: ['dn', 'cn', 'givenName', 'sn', 'telephoneNumber', 'mail', 'manager', 'objectClass']
@@ -45,19 +45,13 @@ client.search(adSuffix, searchOptions, (err, res: SearchCallbackResponse) => {
     console.log('end status: ', result!.status);
     console.log('result', searchResult);
 
-    console.log("#### will unbind")
+    // FIXME 注意ldapjs有个bug，callback不会被调用
     client.unbind(err => {
-      console.log('### err', err)
+      console.log('### unbind err', err)
     });
-    console.log("#### unbind done")
-
 
   });
 
 });
 
-// Wrap up
-// client.unbind(err => {
-//   ifError(err);
-// });
 
