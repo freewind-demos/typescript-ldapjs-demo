@@ -1,13 +1,13 @@
 {
-  "scripts": {
-    "demo": "ts-node hello.ts"
-  },
-  "devDependencies": {
-    "@types/ldapjs": "0.0.3",
-    "ts-node": "8.4.1",
-    "typescript": "3.6.3"
-  },
-  "dependencies": {
-    "ldapjs": "1.0.2"
-  }
+    "scripts": {
+        "start": "ts-node hello.ts"
+    },
+    "devDependencies": {
+        "@types/ldapjs": "0.0.3",
+        "ts-node": "8.4.1",
+        "typescript": "3.6.3"
+    },
+    "dependencies": {
+        "ldapjs": "1.0.2"
+    }
 }
